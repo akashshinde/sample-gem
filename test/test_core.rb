@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require File::expand_path(File::join(File::dirname(__FILE__),'..','lib/sample-gem/sample-gem.rb'))
+require File::expand_path(File::join(File::dirname(__FILE__),'..','lib/sample-gem.rb'))
 
 class SampleGemTest < Minitest::Test
   def test_init

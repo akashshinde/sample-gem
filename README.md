@@ -17,6 +17,8 @@ And then execute:
 ## Usage
 
 ```ruby
+require 'bundler'
+Bundler::require
 SampleGem::Core::init
 # => "Init complete"
 SampleGem::Core::VERSION
