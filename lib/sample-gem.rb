@@ -1,5 +1,3 @@
-require File::expand_path(File::join(File::dirname(__FILE__), "/version.rb"))
-
 module SampleGem
   module Core
     # Your code goes here...
