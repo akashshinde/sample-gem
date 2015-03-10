@@ -17,12 +17,11 @@ And then execute:
 ## Usage
 
 ```ruby
-require 'bundler'
-Bundler::require
+require 'rubygems'
+require 'bundler/setup'
+require 'sample-gem'
 SampleGem::Core::init
 # => "Init complete"
-SampleGem::Core::VERSION
-# => "0.0.1"
 ```
 
 ## Contributing
