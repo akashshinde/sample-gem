@@ -20,6 +20,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   # use add_runtime_dependency where this gem needs a gem in order to function
   # spec.add_runtime_dependency "gem dependency"
-  spec.add_development_dependency "bundler", "~> 1.7"
+  spec.add_development_dependency "bundler", "~> 2.1.4"
   spec.add_development_dependency "rake", "~> 10.0"
 end
