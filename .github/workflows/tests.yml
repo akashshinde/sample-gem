@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        ruby: [2.5, 2.6, 2.7, '3.0', head, jruby, jruby-head, truffleruby, truffleruby-head]
+        ruby: [2.5, 2.6, 2.7, '3.0']
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
     - name: Install gems
       run: bundle install
     - name: Run tests
-      run: bundle exec rake
+      run: bundle exec rake test
     - name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem
