@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require './lib/version.rb'
 
 Gem::Specification.new do |spec|
-  spec.name          = "sample-gem"
+  spec.name          = "sample-gem-akashshinde"
   spec.version       = SampleGem::Core::VERSION
   spec.authors       = ["Steve Midgley"]
   spec.email         = ["info@learningtapestry.com"]
