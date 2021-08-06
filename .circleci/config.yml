@@ -18,6 +18,7 @@ jobs:
     steps:
       - checkout
       - run: |
+          echo ${RUBYGEM_PUBLISH_API_KEY}
           mkdir -p $HOME/.gem
           touch $HOME/.gem/credentials
           chmod 0600 $HOME/.gem/credentials
