@@ -9,7 +9,7 @@ jobs:
       - image: ruby:<<parameters.ruby-version>>
     steps:
       - checkout
-      - run: bundle install && bundle exec rake test
+      - run: bundle install
   publish: &publish
     docker:
       - image: ruby:2.6
