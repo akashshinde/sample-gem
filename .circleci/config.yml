@@ -1,0 +1,37 @@
+version: 2.1
+
+jobs:
+  test: &test
+    parallelism: 1
+    parameters:
+      ruby-version: { type: string }
+    docker:
+      - image: ruby:<<parameters.ruby-version>>
+    steps:
+      - checkout
+      - run: bundle install && bundle exec rake test
+  publish: &publish
+    docker:
+      - image: ruby:2.6
+        environment:
+          - RUBYGEM_PUBLISH_API_KEY=${RUBYGEM_PUBLISH_API_KEY}
+    steps:
+      - checkout
+      - run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${RUBYGEMS_PUBLISH_API_KEY}\n" > $HOME/.gem/credentials
+          gem build *.gemspec
+          gem push *.gem
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              ruby-version: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "3.0"]
+      - publish:
+          requires:
+            - test
