@@ -13,8 +13,6 @@ jobs:
   publish: &publish
     docker:
       - image: ruby:2.6
-        environment:
-          - RUBYGEM_PUBLISH_API_KEY=$RUBYGEM_PUBLISH_API_KEY
     steps:
       - checkout
       - run: |
