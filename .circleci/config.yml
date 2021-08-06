@@ -31,7 +31,7 @@ workflows:
       - test:
           matrix:
             parameters:
-              ruby-version: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "3.0"]
+              ruby-version: ["2.1"]
       - publish:
           requires:
             - test
